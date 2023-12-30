@@ -1,12 +1,14 @@
 
 import './App.css'
 import { ContainerGlobal, Name } from './StylesGlobal'
+import { OrderList } from './components/OrderList/OrderList'
 
 function App() {
 
   return (
     <ContainerGlobal>
-      <Name>Kitchen Display System (KDS)</Name>
+      {/* <Name>Sistema de pedidos - Chifa Ding Dong</Name> */}
+      <OrderList />
     </ContainerGlobal>
   )
 }

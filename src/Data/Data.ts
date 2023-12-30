@@ -4,7 +4,7 @@ export const orders: Order[] = [
   {
     id: crypto.randomUUID(),
     name: "Sopa wantán",
-    description: "Sopa con fideos wantanes rellenos de carne",
+    description: "Sopa con fideos wantanes rellenos de carne.",
     date: "2024-01-01",
     image:
       "https://cdn-images-chwk-prod.s3.amazonaws.com/media/recipemanager/recipe/1691007809_wantan.jpg",
@@ -39,7 +39,7 @@ export const orders: Order[] = [
   {
     id: crypto.randomUUID(),
     name: "Arroz chaufa",
-    description: "Arroz frito estilo gastronómico tusán",
+    description: "Arroz frito estilo gastronómico tusán.",
     date: "2024-01-02",
     image:
       "https://static01.nyt.com/images/2023/06/08/multimedia/hew-arroz-chaufa-zmbt/hew-arroz-chaufa-zmbt-mediumThreeByTwo440.jpg",
@@ -48,7 +48,7 @@ export const orders: Order[] = [
       {
         id: crypto.randomUUID(),
         name: "Arroz",
-        description: "Arroz chifa",
+        description: "Arroz chifa.",
         price: 80,
         image:
           "https://static01.nyt.com/images/2023/06/08/multimedia/hew-arroz-chaufa-zmbt/hew-arroz-chaufa-zmbt-mediumThreeByTwo440.jpg",
@@ -56,7 +56,7 @@ export const orders: Order[] = [
       {
         id: crypto.randomUUID(),
         name: "Kitchen",
-        description: "Trozos de pollo",
+        description: "Trozos de pollo.",
         price: 120,
         image:
           "https://static01.nyt.com/images/2023/06/08/multimedia/hew-arroz-chaufa-zmbt/hew-arroz-chaufa-zmbt-mediumThreeByTwo440.jpg",
@@ -74,7 +74,7 @@ export const orders: Order[] = [
   {
     id: crypto.randomUUID(),
     name: "Aeropuerto",
-    description: "Mezcla de dos platos: arroz chaufa y tallarín saltado",
+    description: "Arroz chaufa + tallarín saltado.",
     date: "2024-01-03",
     image:
       "https://www.comedera.com/wp-content/uploads/2022/05/aereopuero-receta-peruana.jpg",
@@ -109,7 +109,7 @@ export const orders: Order[] = [
   {
     id: crypto.randomUUID(),
     name: "Kamlu wantán",
-    description: "Su combinación de salado y dulce lo hacen especial.",
+    description: "Especial por lo salado y dulce.",
     date: "2024-01-04",
     image:
       "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1001028.jpg",
@@ -144,7 +144,7 @@ export const orders: Order[] = [
   {
     id: crypto.randomUUID(),
     name: "Chaufa de langostinos",
-    description: "Chaufa de langostinos a base de langostinos.",
+    description: "Base de langostinos de mar.",
     date: "2024-01-05",
     image:
       "https://www.comedera.com/wp-content/uploads/2022/02/arroz-chaufa-de-mariscos.jpg",
@@ -181,7 +181,7 @@ export const orders: Order[] = [
     id: crypto.randomUUID(),
     name: "Chijaukay",
     description:
-      "Elaborado con muslos del pollo sin huesos, salsa mensi y harina de chuño.",
+      "Elaborado con muslos del pollo sin huesos.",
     date: "2024-01-06",
     image:
       "https://comida-peruana.net/wp-content/uploads/2019/04/receta-de-pollo-chi-jau-kay.webp",
@@ -190,7 +190,7 @@ export const orders: Order[] = [
       {
         id: crypto.randomUUID(),
         name: "Pollo especial",
-        description: "Pollo deshuesado y cortado en trozos pequeños",
+        description: "Pollo deshuesado, cortado en trozos pequeños",
         price: 10,
         image:
           "https://comida-peruana.net/wp-content/uploads/2019/04/receta-de-pollo-chi-jau-kay.webp",
@@ -205,7 +205,43 @@ export const orders: Order[] = [
     quantity: 2,
     price: 40,
   },
+
+  /************** */
+
+  {
+    id: crypto.randomUUID(),
+    name: "Chijaukay",
+    description:
+      "Elaborado con muslos del pollo sin huesos.",
+    date: "2024-01-06",
+    image:
+      "https://comida-peruana.net/wp-content/uploads/2019/04/receta-de-pollo-chi-jau-kay.webp",
+    status: "pending",
+    products: [
+      {
+        id: crypto.randomUUID(),
+        name: "Pollo especial",
+        description: "Pollo deshuesado, cortado en trozos pequeños",
+        price: 10,
+        image:
+          "https://comida-peruana.net/wp-content/uploads/2019/04/receta-de-pollo-chi-jau-kay.webp",
+      },
+    ],
+    user: {
+      id: crypto.randomUUID(),
+      name: "Sofi",
+      lastname: "Rojas",
+      email: "sofia@gmail.com",
+    },
+    quantity: 2,
+    price: 40,
+  },
+
 ];
+
+
+
+
 
 export const ORDERSTATUS = {
   PENDING: "pending",
@@ -218,23 +254,49 @@ export const FILTER_ALL = "all" as const;
 
 export const FILTERS_BUTTONS = {
   [FILTER_ALL]: {
-    label: "All",
+    label: "Todo",
     value: FILTER_ALL,
   },
   [ORDERSTATUS.PENDING]: {
-    label: "Pending",
+    label: "Pendiente",
     value: ORDERSTATUS.PENDING,
   },
   [ORDERSTATUS.IN_PROCESS]: {
-    label: "In process",
+    label: "En proceso",
     value: ORDERSTATUS.IN_PROCESS,
   },
   [ORDERSTATUS.COMPLETED]: {
-    label: "Completed",
+    label: "Completado",
     value: ORDERSTATUS.COMPLETED,
   },
   [ORDERSTATUS.CANCELLED]: {
-    label: "Cancelled",
+    label: "Cancelado",
     value: ORDERSTATUS.CANCELLED,
   },
 } as const;
+
+export const NEW_ORDER = {
+  id: crypto.randomUUID(),
+  name: "Tipakay",
+  description: "Platillo opuesto al Chijaukay",
+  date: "2024-01-07",
+  image: 'https://pbs.twimg.com/media/FTnlRDtXwAAn7KR.jpg',
+  status: "pending",
+  products: [
+    {
+      id: crypto.randomUUID(),
+      name: "Combinacion perfecta",
+      description: "Pollo salado y cortado en trozos pequeños",
+      price: 15,
+      image: "https://pbs.twimg.com/media/FTnlRDtXwAAn7KR.jpg",
+    },
+  ],
+  user: {
+    id: crypto.randomUUID(),
+    name: "Trejo",
+    lastname: "Urquia",
+    email: "",
+  },
+  quantity: 1,
+  price: 20.00,
+}
