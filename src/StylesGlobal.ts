@@ -8,6 +8,7 @@ export const StyleGlobal = createGlobalStyle`
     background-color: #0000;
     box-sizing: border-box;
     font-family: 'Poppins';
+    max-width: 1280px;
   }
 `;
 
@@ -15,8 +16,10 @@ export const ContainerGlobal = styled.div`
   width: 100%;
   min-height: 100vh;
   height: auto;
-  max-width: 1444px;
-  margin: 20px auto;
+max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
   
 `;
 
