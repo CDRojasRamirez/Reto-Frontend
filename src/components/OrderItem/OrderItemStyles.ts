@@ -18,23 +18,24 @@ export const OrderItemText = styled.p`
   font-size: 0.9rem;
   margin: 0;
   text-align: left;
-  padding: 5px 0px;
+  padding: 2px 0px;
   display: flex;
   align-items: center;
-  margin: auto;
 `;
 
 export const OrderItemStatus = styled.p`
   position: absolute;
-  left: 20px;
-  top: 190px;
+  left: 10px;
+  top: 194px;
+  background-color: #232323;
+  border-top-right-radius: 10px;
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0;
-  text-align: left;
-  padding: 5px 0px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const OrderItemTextContainer = styled.div`
@@ -42,8 +43,9 @@ export const OrderItemTextContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: auto;
-  min-height: 150px;
+  min-height: 100px;
   color: white;
+  margin-top: 10px;
 `;
 
 export const OrderItemIconContainer = styled.span`
@@ -82,7 +84,8 @@ export const OrderItemProductName = styled.p`
   font-size: 0.9rem;
   margin: 0;
   text-align: left;
-  padding: 10px 10px;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  color: white;
 `;
