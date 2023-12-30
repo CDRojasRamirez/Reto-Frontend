@@ -49,9 +49,7 @@ export const OrderList: React.FC<unknown> = () => {
           selectedOrders.map((order: Order) => (
             <OrderItem key={order.id} order={order} />
           ))}
-        {selectedOrders.length === 0 && (
-          <NotFoundOrders>Vacío</NotFoundOrders>
-        )}
+        {selectedOrders.length === 0 && <NotFoundOrders>Vacío</NotFoundOrders>}
       </FlexContainer>
     </>
   );

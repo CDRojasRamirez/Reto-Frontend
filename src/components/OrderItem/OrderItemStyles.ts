@@ -26,7 +26,7 @@ export const OrderItemText = styled.p`
 export const OrderItemStatus = styled.p`
   position: absolute;
   left: 10px;
-  top: 194px;
+  top: 196px;
   background-color: #232323;
   border-top-right-radius: 10px;
   font-size: 0.8rem;
@@ -36,6 +36,10 @@ export const OrderItemStatus = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 540px) {
+    top: 198px;
+  }
 `;
 
 export const OrderItemTextContainer = styled.div`
@@ -55,7 +59,7 @@ export const OrderItemIconContainer = styled.span`
 `;
 
 export const OrderItemImage = styled.img`
-position: relative;
+  position: relative;
   width: 100%;
   height: 200px;
   max-height: 200px;

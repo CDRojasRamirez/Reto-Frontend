@@ -1,41 +1,46 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { Order } from '../../ModelsTypes/ModelsTypes'
-import { orders, ORDERSTATUS } from '../../Data/Data'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { Order } from "../../ModelsTypes/ModelsTypes";
+import { orders, ORDERSTATUS } from "../../Data/Data";
 
-const initialState: Array<Order> = orders
+const initialState: Array<Order> = orders;
 
 export const orderSlice = createSlice({
-  name: 'orders',
+  name: "orders",
   initialState,
   reducers: {
     addOrder: (state, action: PayloadAction<Order>) => {
-      state.push(action.payload)
+      state.push(action.payload);
     },
 
     addStatusToProcess: (state, action: PayloadAction<string>) => {
-      const order = state.find((order) => order.id === action.payload)
+      const order = state.find((order) => order.id === action.payload);
       if (order) {
-        order.status = ORDERSTATUS.IN_PROCESS
+        order.status = ORDERSTATUS.IN_PROCESS;
       }
     },
 
     addStatusToCompleted: (state, action: PayloadAction<string>) => {
-      const order = state.find((order) => order.id === action.payload)
+      const order = state.find((order) => order.id === action.payload);
       if (order) {
-        order.status = ORDERSTATUS.COMPLETED
+        order.status = ORDERSTATUS.COMPLETED;
       }
     },
 
     addStatusToCancelled: (state, action: PayloadAction<string>) => {
-      const order = state.find((order) => order.id === action.payload)
+      const order = state.find((order) => order.id === action.payload);
       if (order) {
-        order.status = ORDERSTATUS.CANCELLED
+        order.status = ORDERSTATUS.CANCELLED;
       }
-    }
+    },
   },
-})
+});
 
-export const { addOrder, addStatusToCompleted, addStatusToCancelled, addStatusToProcess } = orderSlice.actions
+export const {
+  addOrder,
+  addStatusToCompleted,
+  addStatusToCancelled,
+  addStatusToProcess,
+} = orderSlice.actions;
 
-export default orderSlice.reducer
+export default orderSlice.reducer;

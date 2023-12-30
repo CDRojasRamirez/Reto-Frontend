@@ -8,22 +8,21 @@ export const StyleGlobal = createGlobalStyle`
     padding: 0;
     background-color: #323232;
     box-sizing: border-box;
+    overflow: auto;
+    overflow-x: hidden;
+    width: 100vw;
   }
 `;
 
 export const ContainerGlobal = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: fit-content;
   max-width: 1200px;
-  height: auto;
-max-width: 90%;
+  max-width: 90%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
-  
 `;
-
 
 export const FlexContainer = styled.div<{ $column?: string; $center?: string }>`
   display: flex;
@@ -35,13 +34,21 @@ export const FlexContainer = styled.div<{ $column?: string; $center?: string }>`
   height: 100%;
   width: 95%;
   margin: auto;
-  padding-top: 60px;
+  padding-top: 80px;
+
+  @media (min-width: 540px) {
+    padding-top: 60px;
+  }
 `;
 
 export const Button = styled.button<{ $buttonstyle?: string }>`
+  z-index: 90;
   background-color: ${(props) =>
-  (props.$buttonstyle === ORDERSTATUS.IN_PROCESS ? "#7b00ff" :
-    props.$buttonstyle === ORDERSTATUS.CANCELLED ? "#ff0000" : "#20ce00")};
+    props.$buttonstyle === ORDERSTATUS.IN_PROCESS
+      ? "#7b00ff"
+      : props.$buttonstyle === ORDERSTATUS.CANCELLED
+      ? "#ff0000"
+      : "#20ce00"};
   color: #fff7ed;
   border: none;
   border-radius: 10px;
@@ -50,14 +57,24 @@ export const Button = styled.button<{ $buttonstyle?: string }>`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
+  box-shadow: ${(props) =>
+    props.$buttonstyle === ORDERSTATUS.IN_PROCESS
+      ? "0 0 1rem rgba(130,0,250,1) "
+      : props.$buttonstyle === ORDERSTATUS.CANCELLED
+      ? "0 0 1rem rgba(255,5,84,1)"
+      : "0 0 1rem rgba(1,220,1,200)"};
+
   &:hover {
     background-color: ${(props) =>
-  (props.$buttonstyle === ORDERSTATUS.IN_PROCESS ? "#7b00ff" :
-    props.$buttonstyle === ORDERSTATUS.CANCELLED ? "#ff0000" : "#20ce00")};
+      props.$buttonstyle === ORDERSTATUS.IN_PROCESS
+        ? "#7b00ff"
+        : props.$buttonstyle === ORDERSTATUS.CANCELLED
+        ? "#ff0000"
+        : "#20ce00"};
     color: #fff7ed;
     transform: scale(1.05);
   }
-  
+
   @media (max-width: 350px) {
     margin: 0 10px;
     width: auto;
@@ -67,9 +84,9 @@ export const Button = styled.button<{ $buttonstyle?: string }>`
 `;
 
 export const Card = styled.div`
-    margin: 0px;
-    position: relative;
-  min-width:auto;
+  margin: 0px;
+  position: relative;
+  min-width: auto;
   width: 100%;
   max-width: 300px;
   padding: 20px;
@@ -78,11 +95,7 @@ export const Card = styled.div`
   height: auto;
   min-height: 300px;
   cursor: pointer;
-
-  /* &:hover {
-    transition: all 0.3s ease-in-out;
-    background-color: #feaaaa;
-  } */
+  box-shadow: "0 0 10rem rgba(255,5,84,1)";
 
   @media (max-width: 350px) {
     margin: 0 10px;
@@ -97,5 +110,3 @@ export const Name = styled.h1`
   text-align: center;
   cursor: pointer;
 `;
-
-

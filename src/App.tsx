@@ -1,16 +1,14 @@
-
-import './App.css'
-import { ContainerGlobal } from './StylesGlobal'
-import { OrderList } from './components/OrderList/OrderList'
+import "./App.css";
+import { ContainerGlobal } from "./StylesGlobal";
+import { OrderList } from "./components/OrderList/OrderList";
 
 function App() {
-
   return (
     <>
-    <OrderList />
-    <ContainerGlobal />
+      <OrderList />
+      <ContainerGlobal />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

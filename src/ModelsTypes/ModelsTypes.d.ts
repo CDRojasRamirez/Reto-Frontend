@@ -1,5 +1,3 @@
-// import { ORDERSTATUS, FILTER_ALL } from "../Data/Data";
-
 import { ORDERSTATUS } from "../Data/Data";
 
 export type Order = {
@@ -13,7 +11,7 @@ export type Order = {
   user: User;
   quantity: number;
   price: number;
-}
+};
 
 export type Product = {
   id: string;
@@ -21,15 +19,19 @@ export type Product = {
   description: string;
   price: number;
   image: string;
-}
+};
 
 export type User = {
   id: string;
   name: string;
   lastname: string;
   email: string;
-}
+};
 
-export type OrderStatusType = ORDERSTATUS.PENDING | ORDERSTATUS.IN_PROCESS | ORDERSTATUS.COMPLETED | ORDERSTATUS.CANCELLED
+export type OrderStatusType =
+  | ORDERSTATUS.PENDING
+  | ORDERSTATUS.IN_PROCESS
+  | ORDERSTATUS.COMPLETED
+  | ORDERSTATUS.CANCELLED;
 
-export type FilterType = FILTER_ALL | OrderStatusType
+export type FilterType = FILTER_ALL | OrderStatusType;
