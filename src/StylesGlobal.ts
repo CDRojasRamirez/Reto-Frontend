@@ -26,7 +26,7 @@ max-width: 1200px;
 
 export const Name = styled.h1`
   font-size: 30px;
-  color: #f97316;
+  color: #5000ff;
   text-align: center;
   cursor: pointer;
 `;
