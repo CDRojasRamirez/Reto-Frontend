@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FilterListHeader = styled.header`
   width: 100%;
+  overflow: hidden;
   background-color: #232323;
   position: fixed;
   z-index: 999;
