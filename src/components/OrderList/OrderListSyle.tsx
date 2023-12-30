@@ -5,4 +5,5 @@ export const NotFoundOrders = styled.p`
   font-weight: 500;
   text-align: center;
   margin: 0;
+  width: 100vw;
 `

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FilterListHeader = styled.header`
-  width: 90%;
-  background-color: red;
+  width: 100%;
+  background-color: #000000;
   position: fixed;
   z-index: 999;
   @media (max-width: 768px) {
@@ -40,7 +40,7 @@ export const FilterListHeader = styled.header`
 
 export const FilterLabel = styled.li<{ $isSelected: boolean }>`
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     cursor: pointer;
     font-weight: ${(props) => (props.$isSelected ? "bold" : "normal")};

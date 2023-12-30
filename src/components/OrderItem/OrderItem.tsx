@@ -25,6 +25,21 @@ export const OrderItem: React.FC<OrderItemProps> = ({ order }) => {
       <Card>
         <OrderItemTitle>{order.name}</OrderItemTitle>
         <OrderItemImage src={order.image} alt={order.name} />
+        {
+          order.status === 'pending' &&
+          <OrderItemButtonContainer>
+            <Button $buttonstyle={`${ORDERSTATUS.IN_PROCESS}`} onClick={() => dispatch(addStatusToProcess(order.id))}>En proceso</Button>
+            <Button $buttonstyle={`${ORDERSTATUS.CANCELLED}`} onClick={() => dispatch(addStatusToCancelled(order.id))}>Cancelar</Button>
+          </OrderItemButtonContainer>
+
+        }
+        {
+          order.status === 'in process' &&
+          <OrderItemButtonContainer>
+            <Button $buttonstyle={`${ORDERSTATUS.COMPLETED}`} onClick={() => dispatch(addStatusToCompleted(order.id))}>Completar</Button>
+            <Button $buttonstyle={`${ORDERSTATUS.CANCELLED}`} onClick={() => dispatch(addStatusToCancelled(order.id))}>Cancelar</Button>
+          </OrderItemButtonContainer>
+        }
         <OrderItemTextContainer>
           <OrderItemText>
           <OrderItemIconContainer>
@@ -37,14 +52,14 @@ export const OrderItem: React.FC<OrderItemProps> = ({ order }) => {
           <OrderItemIconContainer>
               <MdOutlineProductionQuantityLimits />
             </OrderItemIconContainer>
-            {order.quantity}
+            {order.quantity}u
           </OrderItemText>
 
           <OrderItemText>
           <OrderItemIconContainer>
               <SiCashapp />
             </OrderItemIconContainer>
-            {order.price + '.00'}
+            S/ {order.price + '.00'}
           </OrderItemText>
 
           <OrderItemStatus>
@@ -71,21 +86,7 @@ export const OrderItem: React.FC<OrderItemProps> = ({ order }) => {
 
           ))
         } */}
-        {
-          order.status === 'pending' &&
-          <OrderItemButtonContainer>
-            <Button $buttonstyle={`${ORDERSTATUS.IN_PROCESS}`} onClick={() => dispatch(addStatusToProcess(order.id))}>En proceso</Button>
-            <Button $buttonstyle={`${ORDERSTATUS.CANCELLED}`} onClick={() => dispatch(addStatusToCancelled(order.id))}>Cancelar</Button>
-          </OrderItemButtonContainer>
-
-        }
-        {
-          order.status === 'in process' &&
-          <OrderItemButtonContainer>
-            <Button $buttonstyle={`${ORDERSTATUS.COMPLETED}`} onClick={() => dispatch(addStatusToCompleted(order.id))}>Completar</Button>
-            <Button $buttonstyle={`${ORDERSTATUS.CANCELLED}`} onClick={() => dispatch(addStatusToCancelled(order.id))}>Cancelar</Button>
-          </OrderItemButtonContainer>
-        }
+        
       </Card>
     </Fade>
 
